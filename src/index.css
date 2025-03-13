@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+
+
+@theme{
+  --color-medium-gray: #4D4D4D;
+  --color-shook-orange: #FF8C38;
+  --color-dull-white:#AAAAAA;
+  --color-dark-salete:#252525;
+  --color-dull-orange:#FFCC8D;
+  --color-salete:#161616
+}
+
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+ 
+}
+
+#nav-tabs .active{
+  text-decoration-line: underline;
+  -moz-text-decoration-line: underline;
+}
+
+
+/* page x padding 24px */
