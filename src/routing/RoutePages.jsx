@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import About from '../pages/About'
 import Vans from '../pages/VansPage/VansPage'
 import { server } from '../config/server'
+import VanDetails from '../pages/VansPage/VanDetails'
 
 
 export default function RoutePages() {
@@ -13,8 +14,7 @@ export default function RoutePages() {
 <Route path='/home' element={<Home/>}/>
 <Route path='/about' element={<About/>}/>
 <Route path='/vans' element={<Vans/>}/>
-<Route path='/vans/:id' element={<Home/>} />
-
+<Route path='/vans/:id' element={<VanDetails/>} />
 </Routes>
   )
 }

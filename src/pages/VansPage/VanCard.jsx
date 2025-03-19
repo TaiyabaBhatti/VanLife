@@ -13,21 +13,12 @@ export default function VanCard() {
 const [vansData,setVansData] = useState(null);
 const id = useParams()
 
-const poPup = (id) =>{
-console.log(id)
+const handleClick = (id) =>{
+
 }
-
-
-
 useEffect(()=>{
 
-const fetchedData = Axios.get("api/vans").then((res)=>{console.log(res.data.vans); setVansData(res.data.vans)})
-
-
-
-
-
-
+const fetchedData = Axios.get("/api/vans").then((res)=>{console.log(res.data.vans); setVansData(res.data.vans)})
 },[])
 
 
@@ -39,8 +30,8 @@ const fetchedData = Axios.get("api/vans").then((res)=>{console.log(res.data.vans
     vansData.map((van)=>{
     
     return (
-      <Link to={''}>
-<div className='space-y-3 w-64 ' key={van.id} onClick={()=> poPup(van.id)}>
+      <Link to={`/vans/${id}`} key={van.id}>
+<div className='space-y-3 w-64 '  onClick={()=> handleClick(van.id)}>
 <img src={van.imageUrl} alt="" className='rounded-md size-64 object-cover' />
       <div className=' text-salete flex flex-row gap-5 justify-between items-center'>
         <h1 className='font-semibold text-[20px] '>{van.name}</h1>
