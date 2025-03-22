@@ -13,7 +13,7 @@ const params = useParams();
 
     useEffect(()=>{
 
-        const fetchedData = Axios.get(`/api/vans/${params.id}`).then((res)=>{console.log(res.data.vans); setVanData(res.data.vans)});
+        const fetchedData = Axios.get(`/api/vans/${params.id}`).then((res)=>{console.log(params); setVanData(res.data.vans)});
 
 
        
