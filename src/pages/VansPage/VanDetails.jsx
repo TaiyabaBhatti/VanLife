@@ -21,15 +21,6 @@ const params = useParams();
 
         },[])
         
-
-
-
-
-
-
-
-
-
   return (
    <Wrapper className="mb-10 mt-14 min-h-screen">
 
