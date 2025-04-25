@@ -3,10 +3,12 @@ import {Routes,Route} from "react-router-dom"
 import Home from '../pages/Home'
 import About from '../pages/About'
 import Vans from '../pages/VansPage/VansPage'
-import { makeServer } from "./config/server2";
 import VanDetails from '../pages/VansPage/VanDetails'
+import { makeServer } from '../config/server'
+
 
 makeServer();
+// makeServer();
 export default function RoutePages() {
   return (
 <Routes>

@@ -10,10 +10,11 @@ export default function VanDetails() {
 
 const [vanData,setVanData] = useState(null);
 const params = useParams();
+console.log(vanData)
 
     useEffect(()=>{
 
-        const fetchedData = Axios.get(`/api/vans/${params.id}`).then((res)=>{console.log(params); setVanData(res.data.vans)});
+        const fetchedData = Axios.get(`/api/vans/${params.id}`).then((res)=>{console.log(params); setVanData(res.data.van)});
 
 
        
