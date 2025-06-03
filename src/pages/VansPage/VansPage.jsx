@@ -1,40 +1,33 @@
 import React from "react";
 import Wrapper from "../../components/ui/Wrapper";
 import Button from "../../components/ui/Button";
-import VanCard from "./VanCard";
+import VanCollection from "./VanCollection";
+import { Link, useParams } from "react-router-dom";
+import TabFilter from "./TabFilter";
 
 export default function Vans() {
+  const params = useParams();
+  console.log(params);
   return (
     <>
       <Wrapper className="mb-10 space-y-10 mt-14">
         <div className="space-y-5">
           <h1 className="font-bold text-3xl">Explore our van options</h1>
           <div className="flex flex-row gap-3  items-center ">
-            <Button
-              text="Simple"
-              bgColor="bg-dull-orange"
-              textColor="text-gray-600"
-            />
-            <Button
-              text="Luxury"
-              bgColor="bg-dull-orange"
-              textColor="text-gray-600"
-            />
-            <Button
-              text="Rugged"
-              bgColor="bg-dull-orange"
-              textColor="text-gray-600"
-            />
+            <TabFilter text="Simple" path={`type=simple`} />
+            <TabFilter text="Luxury" path={`type=luxury`} />
+            <TabFilter text="Rugged" path={`type=rugged`} />
 
-            <button className="text-base text-gray-600 underline">
+            {/* . represent current path without any string after ? */}
+            <Link to={"."} className="text-base text-gray-600 underline">
               Clear filters
-            </button>
+            </Link>
           </div>
         </div>
 
         {/* vans list */}
         <div className="flex flex-row flex-wrap gap-x-6 gap-y-12 justify-start">
-          <VanCard />
+          <VanCollection />
         </div>
       </Wrapper>
     </>
