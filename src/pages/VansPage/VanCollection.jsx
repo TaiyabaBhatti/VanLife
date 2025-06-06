@@ -10,7 +10,6 @@ export default function VanCard() {
   const [vansData, setVansData] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
-  console.log(typeFilter);
 
   const handleClick = (id) => {
     navigate(`/vans/${id}`);
@@ -26,8 +25,11 @@ export default function VanCard() {
     vansData
       .filter((van, index) => {
         if (typeFilter != null) {
-          console.log(van);
-          return van.type.toLowerCase() === typeFilter;
+          return (
+            van.type.toLowerCase() === typeFilter
+
+            // van.price === parseInt(typeFilter)
+          );
         }
 
         return true;
